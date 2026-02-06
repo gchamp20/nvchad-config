@@ -25,6 +25,45 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+require("telescope").setup{
+  defaults = {
+    file_ignore_patterns = {
+      "vcpkg"
+    },
+    mappings = {
+        i = {
+          ["<C-u>"] = false,
+        },
+      },
+  },
+  pickers = {
+    live_grep = {
+      previewer = false,
+      layout_config = {
+        width = 0.75,
+      },
+    },
+    grep_string = {
+      previewer = false,
+      layout_config = {
+        width = 0.75,
+      },
+    },
+    find_files = {
+      previewer = false,
+    }
+  },
+  extensions = {
+    fzf  = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
+
+}
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
