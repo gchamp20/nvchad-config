@@ -8,6 +8,10 @@ local M = {}
 M.base46 = {
 	theme = "chocolate",
 
+  hl_override = {
+        TelescopeSelection = { fg = "#ffffff", bg = "#274472", bold = true },
+  }
+
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },

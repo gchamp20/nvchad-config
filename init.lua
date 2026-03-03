@@ -11,6 +11,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.o.modeline = false
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
@@ -28,7 +30,9 @@ require("lazy").setup({
 require("telescope").setup{
   defaults = {
     file_ignore_patterns = {
-      "vcpkg"
+      "vcpkg",
+      "build%-ci",
+      "Testing",
     },
     mappings = {
         i = {
@@ -51,7 +55,13 @@ require("telescope").setup{
     },
     find_files = {
       previewer = false,
-    }
+    },
+    buffers = {
+      previewer = false,
+      layout_config = {
+        width = 0.75,
+      },
+    },
   },
   extensions = {
     fzf  = {
@@ -63,6 +73,8 @@ require("telescope").setup{
   },
 
 }
+
+require('telescope').load_extension('fzf')
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")

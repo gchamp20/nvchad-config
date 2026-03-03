@@ -19,6 +19,9 @@ return {
           },
           cpp = {
             require("formatter.filetypes.cpp").clangformat
+          },
+          c = {
+            require("formatter.filetypes.c").clangformat
           }
         },
       })
