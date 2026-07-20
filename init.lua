@@ -33,6 +33,7 @@ require("telescope").setup{
       "vcpkg",
       "build%-ci",
       "Testing",
+      "build-test",
     },
     mappings = {
         i = {
